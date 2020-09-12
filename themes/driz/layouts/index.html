@@ -1,0 +1,21 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<h3>Daftar blog</h3>
+<ul>
+  {{ range where .Site.RegularPages "Section" "blog"}}
+  <li>
+    <a href="{{.Permalink}}">{{.Title}}</a>
+    <span>Dibuat: {{.Date.Format "2006-01-02"}}</span>
+  </li>
+  {{ end }}
+</ul>
+<h3>Daftar Rekomendasi</h3>
+<ul>
+  {{ range where .Site.RegularPages "Section" "rekomend"}}
+  <li>
+    <a href="{{.Permalink}}">{{.Title}}</a>
+    <span>Dibuat: {{.Date.Format "2006-01-02"}}</span>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}
