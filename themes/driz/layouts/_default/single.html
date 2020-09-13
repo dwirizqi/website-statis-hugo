@@ -2,6 +2,13 @@
 <h2>{{.Title}}</h2>
 <div>{{.Content}}</div>
 <span>Dibuat: {{.Date.Format "01-02-2006"}}</span>
-
+<hr />
+{{ with .Params.tags }}
+<ul>
+  {{range .}}
+  <li>
+    <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+  </li>
+  {{ end }}
 </ul>
-{{ end }}
+{{end}} {{ end }}

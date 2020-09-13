@@ -1,3 +1,7 @@
 <a href="/">Home</a>
 <a href="/blog">Blog</a>
 <a href="/rekomend">Rekomend</a>
+{{ if .IsHome}}
+<h1>{{ .Title }}</h1>
+{{ end }}
+<hr />

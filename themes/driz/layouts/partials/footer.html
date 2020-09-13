@@ -1,2 +1,6 @@
 <hr />
-dwirizqi
+
+{{ range $name, $taxonomy := .Site.Taxonomies.tags}}
+<a href="/tags/{{$name}}">{{$name}}</a>
+{{ end }}
+<p>dwirizqi</p>
