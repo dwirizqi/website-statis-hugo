@@ -1,11 +1,11 @@
 {{ define "main"}}
 <h3>{{.Title}}</h3>
 <ul>
-  {{ range .Pages}}
+  {{ range (.Paginator 2).Pages}}
   <li>
     <a href="{{.Permalink}}">{{.Title}}</a>
     <span>Dibuat: {{.Date.Format "2006-01-02"}}</span>
   </li>
   {{ end }}
 </ul>
-{{ end }}
+{{ template "_internal/pagination.html" . }} {{ end }}

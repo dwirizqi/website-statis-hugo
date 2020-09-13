@@ -2,3 +2,6 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "Demo Hugo"
 theme = "driz"
+summaryLength = 10
+[params]
+  Description = "belajar koding"

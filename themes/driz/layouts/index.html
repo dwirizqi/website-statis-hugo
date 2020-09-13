@@ -5,6 +5,7 @@
   {{ range where .Site.RegularPages "Section" "blog"}}
   <li>
     <a href="{{.Permalink}}">{{.Title}}</a>
+    <p>{{ or .Params.snippet .Summary }}</p>
   </li>
   {{ end }}
 </ul>
@@ -13,6 +14,7 @@
   {{ range where .Site.RegularPages "Section" "rekomend"}}
   <li>
     <a href="{{.Permalink}}">{{.Title}}</a>
+    <p>{{ .Summary }}</p>
   </li>
   {{ end }}
 </ul>
