@@ -1,21 +1,16 @@
 {{ define "main" }}
-
-<h3>Daftar blog</h3>
-<ul>
+<h2 class="wellcome-text">Selamat membaca tulisan random</h2>
+<div class="row">
   {{ range where .Site.RegularPages "Section" "blog"}}
-  <li>
-    <a href="{{.Permalink}}">{{.Title}}</a>
+
+  <div class="card">
+    <a href="{{.Permalink}}" class="title">{{.Title}}</a>
     <p>{{ or .Params.snippet .Summary }}</p>
-  </li>
+    {{ with .Params.tags }} {{range .}}
+    <a href="/tags/{{ . | urlize }}" class="tags">{{ . }}</a>
+    {{ end }} {{end}}
+  </div>
+
   {{ end }}
-</ul>
-<h3>Daftar Rekomendasi</h3>
-<ul>
-  {{ range where .Site.RegularPages "Section" "rekomend"}}
-  <li>
-    <a href="{{.Permalink}}">{{.Title}}</a>
-    <p>{{ .Summary }}</p>
-  </li>
-  {{ end }}
-</ul>
+</div>
 {{ end }}

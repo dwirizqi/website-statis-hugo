@@ -1,6 +1,13 @@
-<hr />
-
-{{ range $name, $taxonomy := .Site.Taxonomies.tags}}
-<a href="/tags/{{$name}}">{{$name}}</a>
-{{ end }}
-<p>dwirizqi</p>
+<footer>
+  <div class="menu">
+    <div class="menu-list">
+      <p>Tulisan random tentang:</p>
+      {{ range $name, $taxonomy := .Site.Taxonomies.tags}}
+      <a href="/tags/{{$name}}" class="footer-tags">{{$name}}</a>
+      {{ end }}
+    </div>
+    <a href="https://www.instagram.com/dwirizqilham/" target="_blank"
+      >dwirizqi</a
+    >
+  </div>
+</footer>
