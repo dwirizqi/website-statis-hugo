@@ -4,7 +4,7 @@
   {{ range where .Site.RegularPages "Section" "blog"}}
 
   <div class="card">
-    <a href="{{.Permalink}}" class="title">{{.Title}}</a>
+    <a href="{{.RelPermalink}}" class="title">{{.Title}}</a>
     <p>{{ or .Params.snippet .Summary }}</p>
     {{ with .Params.tags }} {{range .}}
     <a href="/tags/{{ . | urlize }}" class="tags">{{ . }}</a>
