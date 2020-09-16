@@ -1,16 +1,18 @@
 {{ define "main" }}
 <h2 class="wellcome-text">Selamat membaca tulisan random</h2>
 <div class="row">
-  {{ range where .Site.RegularPages "Section" "blog"}}
+  <div class="content">
+    {{ range where .Site.RegularPages "Section" "blog"}}
 
-  <div class="card">
-    <a href="{{.RelPermalink}}" class="title">{{.Title}}</a>
-    <p>{{ or .Params.snippet .Summary }}</p>
-    {{ with .Params.tags }} {{range .}}
-    <a href="/tags/{{ . | urlize }}" class="tags">{{ . }}</a>
-    {{ end }} {{end}}
+    <div class="card">
+      <a href="{{.RelPermalink}}" class="title">{{.Title}}</a>
+      <p>{{ or .Params.snippet .Summary }}</p>
+      {{ with .Params.tags }} {{range .}}
+      <a href="/tags/{{ . | urlize }}" class="tags">{{ . }}</a>
+      {{ end }} {{end}}
+    </div>
+
+    {{ end }}
   </div>
-
-  {{ end }}
 </div>
 {{ end }}

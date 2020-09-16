@@ -1,11 +1,13 @@
 {{ define "main"}}
 <h3>Tag: {{.Title}}</h3>
 <div class="row">
-  {{ range (.Paginator 3).Pages}}
-  <div class="card">
-    <a href="{{.Permalink}}" class="title">{{.Title}}</a>
-    <p>{{ or .Params.snippet .Summary }}</p>
+  <div class="content">
+    {{ range (.Paginator 3).Pages}}
+    <div class="card">
+      <a href="{{.Permalink}}" class="title">{{.Title}}</a>
+      <p>{{ or .Params.snippet .Summary }}</p>
+    </div>
+    {{ end }}
   </div>
-  {{ end }}
 </div>
 {{ template "_internal/pagination.html" . }} {{ end }}
